@@ -58,10 +58,15 @@ export default class Main extends Component {
             <div className='product-list'>
                 { products.map( product => (
                     <article key={product._id}>
-                        <strong>{ product.title }</strong>
-                        <p>{ product.description }</p>
-                        <Link to = {`/products/${product._id}`}> Acessar </Link>
+                        <div className="header-list">
+                            <strong>{ product.title }</strong>
+                            <p>{ product.description }</p>
+                        </div>
+                        <div className='link'>
+                            <Link to = {`/products/${product._id}`}> Acessar </Link>
+                        </div>
                     </article>
+                   
                 ))}
                 <div className="actions">
                     <button disabled={ page === 1 } onClick = { this.prevPage }>Anterior</button>
